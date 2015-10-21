@@ -1,4 +1,4 @@
-Coursera web frameworks 
+# Coursera web frameworks
 
 ### Viewport
 
@@ -33,4 +33,73 @@ Coursera web frameworks
         <div class="col-sm-7"></div>
     </div>
 </div>
+```
+
+### Navbar
+#### Normal Navbar Example:
+```html
+<nav class="navbar navbar-default" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">Ristorante Con Fusion</a>
+    </div>
+    <ul class="nav navbar-nav">	
+      <li class="ac9ve"><a href="#">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Menu</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right"
+      <li><a href="#">Sign in</a></div>
+      <li><a href="#">Contact</a></div>
+    </ul>
+  </div>
+</nav>
+```
+#### Responsive Navbar Example:
+```html
+<nav class="navbar navbar-default" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbardata" aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      ...
+    </div>
+    <div id="navbardata" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">...</ul>
+    </div>
+  </div>
+</nav>
+```
+#### Positioning Navbar:
+* .navbar-fixed-top and .navbar-fixed-bottom<br>
+Fixed to top/bottom of window and does not scroll
+* .navbar-static-top<br>
+Full-width navbar at the top that scrolls
+* .navbar-inverse<br>
+Dark navbar with light text (opposite to .navbar-default)
+
+#### Dropdown
+```html
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="caret"></span></a>
+  <ul class="dropdown-menu">
+    <li><a href="#">Appetizers</a></li>
+    <li><a href="#">Drinks</a></li>
+    <li role="separator" class="divider"></li>
+    <li class="dropdown-header">Specials</li>
+    <li><a href="#">Lunch Buffet</a></li>
+    <li><a href="#">Weekend Brunch</a></li>
+  </ul>
+</li>
+```
+### Icon Fonts
+Icon fonts is set of symbols and glyphs and can be used just like regular fonts.
+```html
+<span class="glyphinco glyphicon-home" aria-hidden="true"></span> <!-- Glyphicons -->
+<i class="fa fa-phone"> <!-- Font Awesome -->
+<a class="btn btn-social-icon btn-facebook" href="http://www.facebook.com/profile.php?id="><i class="fa fa-facebook"></i></a> <!-- Bootstrap-social -->
 ```
