@@ -206,3 +206,234 @@ form-horizontal
    <div class="input-group-addon">)</div> 
 </div>
 ```
+
+## Bootstrap JavaScript Components
+### Tabs and Tabbed Navigation
+#### Tabs and pills nav structure
+Both nav-tabs and nav-pills provides exactly same functionality but different look and feel.
+```html
+<ul	class="nav nav-tabs" role="tablist">	
+<li	role="presenta0on" class="ac0ve">	
+    <a	href=”#peter”>Peter Pan, CEO</a></li>	
+<li	role="presenta0on">	
+    <a	href="#danny”>Danny Witherspoon, CFO</a></li>	
+<li	role="presenta0on">	
+    <a	href="#agumbe”>Agumbe Tang, CTO</a></li>	
+<li	role="presenta0on”>	
+    <a	href="#alberto>Alberto Somayya,	Exec. Chef</a></li>	
+</ul>	
+```
+Other classes can be also applied to tabs and pills nav:
+* nav-justified:  stretch the width of	the parent
+* disabled: disable the element
+* nav-stacked: display pills vertically (not available for tabs)
+
+#### Tab content and panes
+Entire content should be enclosed within a *&lt;div class="tab-content">* block and each pane should be contained within a *&lt;div class="tab-pane">* block.
+Example:
+```html
+<ul class="nav nav-tabs" role="tablist">
+    <li role="presenta0on" class="ac0ve">
+        <a href="#peter" aria-controls="home" role="tab"
+           data-toggle="tab">Peter Pan, CEO</a>
+    </li>
+        ...
+</ul>
+<div class="tab-content">
+    <div role="tabpanel" class="tab-pane fade in ac0ve" id="peter">
+        <h3>Peter Pan <small>Chief Epicurious Officer</small></h3>
+        <p> ... </p>
+    </div>
+        ...
+</div>
+```
+
+### Collapse
+```html
+<div class="col-md-5 col-md-offset-1">
+<div class="collapse in" id="collapseExample">
+   <div class="well">
+      <h3>Some Collapsible Content</h3>
+    <p>This is some collapsible content that will be toggled
+         with the bu?on on the right</p>
+   </div>
+</div>
+</div>
+<div class="col-md-3">
+<a class="btn btn-primary" role="bu?on"
+     data-toggle="collapse" href="#collapseExample"
+     aria-expanded="false" aria-controls="collapseExample">
+   Toggle Info
+</a>
+</div>
+```
+### Accordion
+```html
+<div class="panel-group" id="accordion” role="tablist”>
+	<div class="panel panel-default">
+		<div class="panel-heading" role="tab" id="headingPeter">
+			<h3 class="panel-Stle">
+			<a role="bu?on" data-toggle="collapse"
+					data-parent="#accordion" href="#peter”>
+					Peter Pan
+					<small>Chief Epicurious Officer</small></a>
+			</h3>
+			</div>
+			<div role="tabpanel" class="panel-collapse collapse in” id="peter”>
+			<div class="panel-body">
+			...
+			</div>
+		</div>
+	</div>
+        ...
+</div>
+```
+
+### Scrollspy
+* Add data-* attributes to body of the page
+```html
+<body data-spy="scroll" data-target="#myScrollspy" data-offset="200">
+```
+* Add a nav element to the page
+```html
+<nav class="hidden-xs col-sm-2" id="myScrollspy">
+    <ul class="nav nav-pills nav-stacked" data-spy="affix" data-offset-top="400">
+        <li><a href="#history">Our History</a></li>
+        <li><a href="#corporate">Corporate</a></li>
+        <li><a href="#facts">Facts</a></li>
+    </ul>
+</nav>
+```
+### Affix
+* Add the affix data-* classes to the &lt;ul> nav element:
+```html
+<ul class="nav nav-pills nav-stacked" data-spy="affix" data-offset-top="400">
+```
+* Add the affix CSS class:
+```css
+.affix {
+    top:100px;
+}
+```
+
+### Tooltips, Popovers and Modals
+#### Tooltip
+* Simplest way to display content
+Pops up when the user hovers over an element
+* Three aGributes:
+```html
+data-toggle="tooltip"
+data-placement="top|bottom|left|right"
+title="message string"
+```
+* Javascript code to be included:
+```javascript
+<script>
+	$(document).ready(func$on() {
+	$('[data-toggle="tooltip"]').tooltip(); });
+</script>
+```
+Example
+```html
+<a type="buGon" class="btn btn-warning btn-block"
+	data-toggle="tooltip" title="Or Call us at +852 12345678”
+	data-placement="bottom" href="#reserveform">
+	Reserve Table</a>
+```
+
+#### Popover
+* Includes a $tle and content 
+– Pops up when the user clicks on an element 
+* Four attributes: 
+```hml
+data-toggle="tooltip" 
+data-placement=""top|boGom|leM|right"
+title="message title"
+data-content="message string"
+```
+* Javascript code to be included: 
+```javascript
+<script> 
+$(document).ready(func$on() { 
+$('[data-toggle="popover"]').popover(); }); 
+</script> 
+```
+Example:
+```html
+<button type="button" class="btn btn-warning"  
+data-toggle="popover" title="Our Tel. Number"
+data-content="+852 12345678"
+data-placement="right"style="color:#000;"> 
+Call Us 
+</button> 
+```
+
+#### Modal
+* More detailed information can be presented than tooltips and popovers 
+* Modal contains header, body and footer
+* Can use the Bootstrap grid in the body to organize content 
+Example:
+```html
+<div id="loginModal" class="modal fade" role="dialog">
+	<div class="modal-dialog">
+	<!-- Modal content-->
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="buGon" class="close"
+				data-dismiss="modal">&times;</button>
+				<h4 class="modal-title">Login </h4>
+			</div>
+			<div class="modal-body">
+			. . .
+			</div>
+		</div>
+	</div>
+</div>
+
+<a data-toggle="modal" data-target="#loginModal">Login</a>	
+```
+
+### Carousel
+* Allows the inclusion of a slideshow with captions
+```html
+ <div id="mycarousel" class="carousel slide" data-ride="carousel"> 
+   . . . 
+</div> 
+```
+* Adding Slides:
+```html
+<div class="carousel-inner" role="listbox"> 
+	<div class="item active"> 
+	   <img class="img-responsive" src="…" alt="…"> 
+	   <div class="carousel-caption"> 
+	   ... 
+	   </div> 
+	</div> 
+	<div class="item"> 
+	   ... 
+	   <div class="carousel-caption"> 
+	   ... 
+	   </div> 
+	</div> 
+</div> 
+```
+* Adding Indicator Controls
+```html
+<ol class="carousel-indicators"> 
+	<li data-target="#mycarousel" data-slide-to="0" class="active"></li> 
+	<li data-target="#mycarousel" data-slide-to="1"></li> 
+	<li data-target="#mycarousel" data-slide-to="2"></li> 
+</ol> 
+```
+* Adding Left and Right Controls
+```html
+<a class="  carousel-control" href="#mycarousel" role="buSon" data-slide="prev">
+<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+<span class="sr-only">Previous</span>
+</a>
+
+<a class="right carousel-control" href="#mycarousel" role="button" data-slide="next">
+<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+<span class="sr-only">Next</span>
+</a>
+```
