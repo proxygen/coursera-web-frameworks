@@ -61,9 +61,7 @@
                     <li><a href="contactus.html"><i class="fa fa-envelope-o"></i> Contact</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a data-toggle="modal" data-target="#loginModal">
-                    <span class="glyphicon glyphicon-log-in"></span> Login</a>
-                    </li>
+                    <li><a id="loginButton"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
                 </ul>
             </div>
         </div>
@@ -113,9 +111,7 @@
                     <p style="padding:20px;"></p>
                     <img src="img/logo.png" class="img-responsive">
                 </div>
-                <div class="col-xs-12 col-sm-2"><p style="padding:40px;"></p><a type="button" class="btn btn-warning btn-block"
-                    data-toggle="modal"
-                    data-placement="bottom" data-target="#reserveform">Reserve Table</a></div>
+                <div class="col-xs-12 col-sm-2" id="reserveButton"><p style="padding:40px;"></p><a type="button" class="btn btn-warning btn-block">Reserve Table</a></div>
             </div>
         </div>
     </header>
@@ -180,6 +176,7 @@
                         <div class="form-group">
                             <div class="col-sm-offset-2 col-sm-10">
                                 <button type="submit" class="btn btn-primary">Reserve</button>
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
                             </div>
                         </div>
                         <div class="alert alert-warning alert-dismissible" role="alert">
@@ -387,11 +384,27 @@
     <script>
         $(document).ready(function(){
             $("#mycarousel").carousel( { interval: 2000 } );
-                          $("#carousel-pause").click(function(){
+            $("#carousel-pause").click(function(){
                 $("#mycarousel").carousel('pause');
             });
-                        $("#carousel-play").click(function(){
+            $("#carousel-play").click(function(){
                 $("#mycarousel").carousel('cycle');
+            });
+            
+            // reserve table modal
+            $("#reserveform").modal({
+                show: false
+            });
+            $("#reserveButton").click(function(){
+                $("#reserveform").modal('toggle')
+            });
+            
+            // login modal
+            $("#loginModal").modal({
+                show: false
+            });
+            $("#loginButton").click(function(){
+                $("#loginModal").modal('toggle')
             });
         });
     </script>
